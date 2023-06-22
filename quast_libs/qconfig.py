@@ -179,8 +179,8 @@ fragmented_max_indent = MAX_INDEL_LENGTH # for fake translocation in fragmented 
 
 # large genome params
 LARGE_EXTENSIVE_MIS_THRESHOLD = 7000
-LARGE_MIN_CONTIG = 0
-LARGE_MIN_ALIGNMENT = 500
+LARGE_MIN_CONTIG = 0 # 0 instead of 3000 to get --min-contig-threshold 0
+LARGE_MIN_ALIGNMENT = 0 # 0 instead of 500 to get contigs with less than 500 bp
 
 # Upperbound
 upperbound_min_connections = None
