@@ -34,7 +34,7 @@ else:
 # default values for options
 contig_thresholds = "0,1000,5000,10000,25000,50000"
 min_contig = None
-DEFAULT_MIN_CONTIG = 500
+DEFAULT_MIN_CONTIG = 0 # instead of 500 to get contigs with less than 500 pb
 genes_lengths = "0,300,1500,3000"
 ref_fpath = ''
 prokaryote = True  # former cyclic
