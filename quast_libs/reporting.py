@@ -39,6 +39,7 @@ class Fields:
     CONTIGS__FOR_THRESHOLDS = ('# contigs (>= %d bp)', tuple(qconfig.contig_thresholds))
     LARGCONTIG = 'Largest contig'
     TOTALLEN = 'Total length'
+    AVGLEN = 'Average contig length'
     TOTALLENS__FOR_THRESHOLDS = ('Total length (>= %d bp)', tuple(qconfig.contig_thresholds))
     TOTALLENS__FOR_1000_THRESHOLD = 'Total length (>= 1000 bp)'
     TOTALLENS__FOR_10000_THRESHOLD = 'Total length (>= 10000 bp)'
@@ -217,7 +218,7 @@ class Fields:
     SIMILAR_MIS_BLOCKS = '# similar misassembled blocks'
 
     ### content and order of metrics in MAIN REPORT (<quast_output_dir>/report.txt, .tex, .tsv):
-    order = [NAME, CONTIGS__FOR_THRESHOLDS, TOTALLENS__FOR_THRESHOLDS, CONTIGS, LARGCONTIG, TOTALLEN, REFLEN, ESTREFLEN, GC, REFGC,
+    order = [NAME, CONTIGS__FOR_THRESHOLDS, TOTALLENS__FOR_THRESHOLDS, CONTIGS, LARGCONTIG, TOTALLEN, AVGLEN, REFLEN, ESTREFLEN, GC, REFGC,
              N50, NG50, N75, NG75, L50, LG50, L75, LG75, EMEANMAX, E50MAX, E75MAX,
              TOTAL_READS, LEFT_READS, RIGHT_READS,
              MAPPED_READS_PCNT, REF_MAPPED_READS_PCNT,
@@ -305,7 +306,7 @@ class Fields:
     ]
 
     # for "short" version of HTML report
-    main_metrics = [CONTIGS, LARGCONTIG, TOTALLEN, LARGALIGN, TOTAL_ALIGNED_LEN,
+    main_metrics = [CONTIGS, LARGCONTIG, TOTALLEN, AVGLEN, LARGALIGN, TOTAL_ALIGNED_LEN,
                     TOTALLENS__FOR_1000_THRESHOLD, TOTALLENS__FOR_10000_THRESHOLD, TOTALLENS__FOR_50000_THRESHOLD,
                     LARGE_MIS_EXTENSIVE, MIS_ALL_EXTENSIVE, MIS_EXTENSIVE_BASES,
                     SUBSERROR, INDELSERROR, UNCALLED_PERCENT,
