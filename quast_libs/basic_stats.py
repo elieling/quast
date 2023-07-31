@@ -312,7 +312,7 @@ def do(ref_fpath, contigs_fpaths, output_dirpath, results_dir):
             report.add_field(reporting.Fields.LARGCONTIG, max(lengths_list))
             largest_contig = max(largest_contig, max(lengths_list))
             report.add_field(reporting.Fields.TOTALLEN, total_length)
-            average_length = total_legth / len(lenghts_list)
+            average_length = total_length / len(lenghts_list)
             report.add_field(reporting.Fields.AVGLEN, average_length)
             if not qconfig.is_combined_ref:
                 report.add_field(reporting.Fields.GC, ('%.2f' % total_GC if total_GC is not None else None))
