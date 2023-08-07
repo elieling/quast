@@ -69,8 +69,26 @@ def print_results(contigs_fpath, log_out_f, used_snps_fpath, total_indels_info, 
     log_out_f.write('\tCovered Bases: %d\n' % result['total_aligned_bases'])
     log_out_f.write('\tEAmeanmax: %s\n' % str(result['ea_mean_max']))
     log_out_f.write('\tStrict EAmeanmax: %s\n' % str(result['strict_ea_mean_max']))
+    log_out_f.write('\tEA5max: %s\n' % str(result['ea_x_max'][5]))
+    log_out_f.write('\tEA10max: %s\n' % str(result['ea_x_max'][10]))
+    log_out_f.write('\tEA15max: %s\n' % str(result['ea_x_max'][15]))
+    log_out_f.write('\tEA20max: %s\n' % str(result['ea_x_max'][20]))
+    log_out_f.write('\tEA25max: %s\n' % str(result['ea_x_max'][25]))
+    log_out_f.write('\tEA30max: %s\n' % str(result['ea_x_max'][30]))
+    log_out_f.write('\tEA35max: %s\n' % str(result['ea_x_max'][35]))
+    log_out_f.write('\tEA40max: %s\n' % str(result['ea_x_max'][40]))
+    log_out_f.write('\tEA45max: %s\n' % str(result['ea_x_max'][45]))
     log_out_f.write('\tEA50max: %s\n' % str(result['ea_x_max'][50]))
     log_out_f.write('\tEA75max: %s\n' % str(result['ea_x_max'][75]))
+    log_out_f.write('\tStrict EA5max: %s\n' % str(result['strict_ea_x_max'][5]))
+    log_out_f.write('\tStrict EA10max: %s\n' % str(result['strict_ea_x_max'][10]))
+    log_out_f.write('\tStrict EA15max: %s\n' % str(result['strict_ea_x_max'][15]))
+    log_out_f.write('\tStrict EA20max: %s\n' % str(result['strict_ea_x_max'][20]))
+    log_out_f.write('\tStrict EA25max: %s\n' % str(result['strict_ea_x_max'][25]))
+    log_out_f.write('\tStrict EA30max: %s\n' % str(result['strict_ea_x_max'][30]))
+    log_out_f.write('\tStrict EA35max: %s\n' % str(result['strict_ea_x_max'][35]))
+    log_out_f.write('\tStrict EA40max: %s\n' % str(result['strict_ea_x_max'][40]))
+    log_out_f.write('\tStrict EA45max: %s\n' % str(result['strict_ea_x_max'][45]))
     log_out_f.write('\tStrict EA50max: %s\n' % str(result['strict_ea_x_max'][50]))
     log_out_f.write('\tStrict EA75max: %s\n' % str(result['strict_ea_x_max'][75]))
     log_out_f.write('\tEmeanmax: %s\n' % str(result['e_mean_max']))
@@ -102,8 +120,26 @@ def save_result(result, report, fname, ref_fpath, genome_size, aligned_lengths):
     total_aligned_bases = result['total_aligned_bases']
     ea_mean_max = result['ea_mean_max']
     strict_ea_mean_max = result['strict_ea_mean_max']
+    ea5max = result['ea_x_max'][5]
+    ea10max = result['ea_x_max'][10]
+    ea15max = result['ea_x_max'][15]
+    ea20max = result['ea_x_max'][20]
+    ea25max = result['ea_x_max'][25]
+    ea30max = result['ea_x_max'][30]
+    ea35max = result['ea_x_max'][35]
+    ea40max = result['ea_x_max'][40]
+    ea45max = result['ea_x_max'][45]
     ea50max = result['ea_x_max'][50]
     ea75max = result['ea_x_max'][75]
+    strict_ea5max = result['strict_ea_x_max'][5]
+    strict_ea10max = result['strict_ea_x_max'][10]
+    strict_ea15max = result['strict_ea_x_max'][15]
+    strict_ea20max = result['strict_ea_x_max'][20]
+    strict_ea25max = result['strict_ea_x_max'][25]
+    strict_ea30max = result['strict_ea_x_max'][30]
+    strict_ea35max = result['strict_ea_x_max'][35]
+    strict_ea40max = result['strict_ea_x_max'][40]
+    strict_ea45max = result['strict_ea_x_max'][45]
     strict_ea50max = result['strict_ea_x_max'][50]
     strict_ea75max = result['strict_ea_x_max'][75]
     ea_x_max = result['ea_x_max']
@@ -150,8 +186,26 @@ def save_result(result, report, fname, ref_fpath, genome_size, aligned_lengths):
                                                                  * 100000.0 / float(total_aligned_length)))
         report.add_field(reporting.Fields.EAMEANMAX, str(ea_mean_max))
         report.add_field(reporting.Fields.STRICT_EAMEANMAX, str(strict_ea_mean_max))
+        report.add_field(reporting.Fields.EA5MAX, str(ea5max))
+        report.add_field(reporting.Fields.EA10MAX, str(ea10max))
+        report.add_field(reporting.Fields.EA15MAX, str(ea15max))
+        report.add_field(reporting.Fields.EA20MAX, str(ea20max))
+        report.add_field(reporting.Fields.EA25MAX, str(ea25max))
+        report.add_field(reporting.Fields.EA30MAX, str(ea30max))
+        report.add_field(reporting.Fields.EA35MAX, str(ea35max))
+        report.add_field(reporting.Fields.EA40MAX, str(ea40max))
+        report.add_field(reporting.Fields.EA45MAX, str(ea45max))
         report.add_field(reporting.Fields.EA50MAX, str(ea50max))
         report.add_field(reporting.Fields.EA75MAX, str(ea75max))
+        report.add_field(reporting.Fields.STRICT_EA5MAX, str(strict_ea5max))
+        report.add_field(reporting.Fields.STRICT_EA10MAX, str(strict_ea10max))
+        report.add_field(reporting.Fields.STRICT_EA15MAX, str(strict_ea15max))
+        report.add_field(reporting.Fields.STRICT_EA20MAX, str(strict_ea20max))
+        report.add_field(reporting.Fields.STRICT_EA25MAX, str(strict_ea25max))
+        report.add_field(reporting.Fields.STRICT_EA30MAX, str(strict_ea30max))
+        report.add_field(reporting.Fields.STRICT_EA35MAX, str(strict_ea35max))
+        report.add_field(reporting.Fields.STRICT_EA40MAX, str(strict_ea40max))
+        report.add_field(reporting.Fields.STRICT_EA45MAX, str(strict_ea45max))
         report.add_field(reporting.Fields.STRICT_EA50MAX, str(strict_ea50max))
         report.add_field(reporting.Fields.STRICT_EA75MAX, str(strict_ea75max))
         report.add_field(reporting.Fields.EA_SIZE_MAX, str(ea_x_max))
