@@ -1,1 +1,11 @@
 **/__pycache__
+*.fa
+*.paf
+*.log
+*.pdf
+*.coords_tmp
+*.hodeco_map
+*.R
+/fruitfly*/
+/test_output/
+/random_out/
