@@ -40,6 +40,7 @@ class Fields:
     LARGCONTIG = 'Largest contig'
     TOTALLEN = 'Total length'
     AVGLEN = 'Average contig length'
+    MEDLEN = 'Median contig length'
     TOTALLENS__FOR_THRESHOLDS = ('Total length (>= %d bp)', tuple(qconfig.contig_thresholds))
     TOTALLENS__FOR_1000_THRESHOLD = 'Total length (>= 1000 bp)'
     TOTALLENS__FOR_10000_THRESHOLD = 'Total length (>= 10000 bp)'
