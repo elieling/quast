@@ -10,6 +10,7 @@ from __future__ import division
 import os
 import re
 from os.path import join
+import statistics
 
 from quast_libs import fastaparser, qconfig, qutils, reporting, plotter
 from quast_libs.circos import set_window_size
@@ -314,6 +315,8 @@ def do(ref_fpath, contigs_fpaths, output_dirpath, results_dir):
             report.add_field(reporting.Fields.TOTALLEN, total_length)
             average_length = total_length / len(lengths_list)
             report.add_field(reporting.Fields.AVGLEN, average_length)
+            median_length = statistics.median(lengths_list)
+            report.add_field(reporting.Fields.MEDLEN, median_length)
             if not qconfig.is_combined_ref:
                 report.add_field(reporting.Fields.GC, ('%.2f' % total_GC if total_GC is not None else None))
             report.add_field(reporting.Fields.UNCALLED, number_of_Ns)
